@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Libro de Ciencia Divertida</title>
+  <style>
+    body { background:#f5f5f5; text-align:center; }
+    #flipbook {
+      width: 800px;
+      height: 500px;
+      margin: auto;
+    }
+    .page {
+      background: white;
+      border: 1px solid #1976d2;
+      border-radius: 10px;
+      padding: 20px;
+      font-family: 'Comic Sans MS', Arial, sans-serif;
+    }
+    h2 { color:#1976d2; }
+    .dialogo { margin:10px 0; padding:8px; background:#e0f7fa; border-radius:8px; }
+    .personaje { font-weight:bold; color:#ff5722; }
+    .narrador { background:#eee; border-left:4px solid #1976d2; padding:8px; font-style:italic; }
+
+.portada {
+  background: #1976d2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.contraportada {
+  background: #388e3c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<h1>📖 Episodio del Arcoíris</h1>
+<div id="flipbook">
+  <!-- Portada -->
+  <div class="page portada">
+    <h2>📖 Libro de Ciencia Divertida</h2>
+    <p>Autor: Quasar</p>
+    <p>Haz clic en la esquina para comenzar...</p>
+  </div>
+
+  <!-- Contenido -->
+  <div class="page">
+    <h2>Viñeta 1 – Introducción</h2>
+    <div class="dialogo"><span class="personaje">GordoGordo:</span> ¡Mira, Robotoide! El cielo se puso su bufanda de colores.</div>
+    <div class="dialogo"><span class="personaje">Robotoide:</span> Corrección: eso es un arcoíris, causado por la refracción de la luz en gotas de agua.</div>
+  </div>
+
+  <div class="page">
+    <h2>Viñeta 2 – Explicación</h2>
+    <div class="dialogo"><span class="personaje">Robotoide:</span> La luz blanca del sol se descompone en colores al atravesar las gotas.</div>
+    <div class="dialogo"><span class="personaje">GordoGordo:</span> O sea que las gotas son como un prisma… ¡pero mojado!</div>
+  </div>
+
+  <div class="page">
+    <h2>Viñeta 3 – Experimento</h2>
+    <div class="dialogo"><span class="personaje">GordoGordo:</span> ¡Voy a hacer mi propio arcoíris con una manguera!</div>
+    <div class="dialogo"><span class="personaje">Robotoide:</span> Exacto, si el sol está detrás de ti y el agua delante, verás los colores aparecer.</div>
+  </div>
+
+  <div class="page">
+    <h2>Viñeta 4 – Cierre</h2>
+    <div class="dialogo"><span class="personaje">GordoGordo:</span> Entonces el arcoíris no es magia, es ciencia… ¡pero igual parece un truco de unicornios!</div>
+    <div class="dialogo"><span class="personaje">Robotoide:</span> Ciencia y belleza pueden ir de la mano.</div>
+    <div class="narrador">Narrador: Así descubrieron que el arcoíris es la luz del sol jugando con las gotas de agua.</div>
+  </div>
+
+  <!-- Contraportada -->
+  <div class="page contraportada">
+    <h2>Fin del Episodio 🌈</h2>
+    <p>Gracias por leer.</p>
+  </div>
+</div>
+
+<!-- Librería jQuery (Turn.js depende de ella) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Librería Turn.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4/turn.min.js"></script>
+
+<script>
+$("#flipbook").turn({
+  width: 800,
+  height: 500,
+  autoCenter: true,
+  gradients: true,   // activa sombras en el pliegue
+  acceleration: true // mejora la animación
+});
+
+</script>
+
+</body>
+</html>
