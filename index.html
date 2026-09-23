@@ -1,0 +1,303 @@
+<!<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ciencia Divertida</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<style>
+      body {
+      font-family: 'Comic Sans MS', Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .hero img {
+      width: 180px;
+      margin: 20px;
+    }
+
+
+
+
+
+
+
+
+    .globo-dialogo {
+      position: absolute;
+      background: #fff;
+      border: 2px solid #1976d2;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: aparecer 0.3s ease;
+      z-index: 1000;
+      max-width: 220px;
+    }
+
+    /* Flecha estilo cómic */
+    .globo-dialogo::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #1976d2 transparent transparent transparent;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    select, button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #1976d2;
+    }
+
+  button {
+      background: #ff5722;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #e64a19;
+    }
+
+
+ body {
+      font-family: 'Comic Sans MS', Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .hero img {
+      width: 180px;
+      margin: 20px;
+      position: relative;
+    }
+
+    /* Animación de salto para GordoGordo */
+    .saltar {
+      animation: saltar 1s infinite;
+    }
+
+    @keyframes saltar {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Animación automática de saludo para Robotoide */
+    #robo {
+      animation: saludar 1.5s infinite;
+      transform-origin: bottom center;
+    }
+
+    @keyframes saludar {
+      0%   { transform: rotate(0deg); }
+      50%  { transform: rotate(20deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+ button {
+      background: #ff5722;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #e64a19;
+    }
+
+
+  </style>
+</head>
+<body>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Encabezado -->
+  <header>
+    <h1>🔬 Ciencia Divertida con GordoGordo y Robotoide</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="episodios/arcoiris.html">Episodios</a></li>
+        <li><a href="fenomenos.html">Fenómenos Naturales</a></li>
+        <li><a href="quimica.html">Química Divertida</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+
+            <h2>¡Aprende ciencia con humor y experimentos!</h2>
+      <button onclick="location.href='episodios/arcoiris.html'">Comienza aquí</button>
+    </section>
+
+<div>
+  <section class="hero">
+    <img src="img/gordogordo.png" alt="GordoGordo">
+    <img src="img/robotoide.png" alt="Robotoide">
+  </section>
+</div>
+ <button id="btnAnimar">Animar Personajes</button>
+
+
+
+
+
+   <div>
+    <select id="tema">
+      <option value="gravedad">Gravedad</option>
+      <option value="arcoiris">Arcoíris</option>
+      <option value="quimica">Química</option>
+    </select>
+    <button id="btnCharla">Iniciar Charla</button>
+  </div>
+
+
+
+
+    <section class="intro">
+      <h3>Bienvenido al laboratorio más divertido del universo</h3>
+      <p>GordoGordo y Robotoide te enseñarán los secretos de la ciencia con risas, experimentos y curiosidades que te harán decir: “¡Wow, eso sí es ciencia divertida!”</p>
+    </section>
+  </main>
+
+  <!-- Footer fijo al fondo -->
+  <footer>
+    <p>🌐 Ciencia Divertida – Creado por Quasar – León, Gto.  
+    <br>© 2026 Todos los derechos reservados</p>
+  </footer>
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gordo = document.querySelector("img[alt='GordoGordo']");
+      const robo = document.querySelector("img[alt='Robotoide']");
+      const btn = document.getElementById("btnCharla");
+      const selectTema = document.getElementById("tema");
+
+      // Conversaciones temáticas
+      const charlas = {
+        gravedad: {
+          gordo: "¡Si cae, la gravedad tiene hambre!",
+          robo: ["La gravedad nos mantiene con los pies en la Tierra.", "Sin ella, volarías como un globo."]
+        },
+        arcoiris: {
+          gordo: "¡Un arcoíris es la bufanda del cielo!",
+          robo: ["La luz se descompone en colores.", "Eso se llama refracción.", "¡Es física con estilo!"]
+        },
+        quimica: {
+          gordo: "¡La química es más sabrosa con pan dulce!",
+          robo: ["La química explica lo invisible.", "Las reacciones están en todas partes.", "Incluso en tu pan dulce favorito."]
+        }
+      };
+
+      function crearGlobo(texto, img, offsetY = -50) {
+        const globo = document.createElement("div");
+        globo.className = "globo-dialogo";
+        globo.textContent = texto;
+        document.body.appendChild(globo);
+
+        const rect = img.getBoundingClientRect();
+        globo.style.left = rect.left + window.scrollX + "px";
+        globo.style.top = rect.top + window.scrollY + offsetY + "px";
+
+        return globo;
+      }
+
+      function iniciarCharla(tema) {
+        const charla = charlas[tema];
+        const globoG = crearGlobo(charla.gordo, gordo, -60);
+        let globos = [];
+
+        charla.robo.forEach((frase, i) => {
+          setTimeout(() => {
+            const globoR = crearGlobo(frase, robo, -60 - (i * 40));
+            globos.push(globoR);
+          }, (i + 1) * 1000);
+        });
+
+        // Ocultar después de unos segundos
+        setTimeout(() => {
+          globoG.remove();
+          globos.forEach(g => g.remove());
+        }, 6000);
+      }
+
+      btn.addEventListener("click", () => {
+        const temaSeleccionado = selectTema.value;
+        iniciarCharla(temaSeleccionado);
+      });
+    });
+
+
+
+  </script>
+
+ <script>
+    document.getElementById("btnAnimar").addEventListener("click", () => {
+      document.getElementById("gordo").classList.toggle("saltar");
+      document.getElementById("robo").classList.toggle("saludar");
+    });
+  </script>
+
+
+
+
+</body>
+</html>
+

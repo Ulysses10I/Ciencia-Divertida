@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fenómenos Naturales - Ciencia Divertida</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle, #5d4037, #3e2723); /* fondo café oscuro */
+      font-family: "Georgia", serif;
+      color: #f5f5dc;
+    }
+
+    #flipbook {
+      width: 90vw;
+      height: 80vh;
+      margin: auto;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      background: #fdf6e3;
+      border: 2px solid #8b5e3c;
+      border-radius: 8px;
+      box-sizing: border-box;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .portada {
+      background: linear-gradient(135deg, #5d4037, #3e2723);
+      color: #f5f5dc;
+      text-shadow: 2px 2px 4px #000;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+    }
+
+    .contraportada {
+      background: linear-gradient(135deg, #3e2723, #1b0000);
+      color: #f5f5dc;
+      text-shadow: 2px 2px 4px #000;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+    }
+
+    .indice {
+      background:#e0c097;
+      border-left:4px solid #8b5e3c;
+      padding:20px;
+    }
+    .indice ul { list-style:none; padding:0; }
+    .indice li { margin:8px 0; }
+    .indice a { color:#5d4037; text-decoration:none; font-weight:bold; }
+    .indice a:hover { text-decoration:underline; }
+
+    .nav-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .nav-buttons button {
+      background:#8b5e3c;
+      color:white;
+      border:none;
+      padding:10px 20px;
+      margin:0 10px;
+      border-radius:5px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+    .nav-buttons button:hover { background:#6d4c41; }
+  </style>
+</head>
+<body>
+
+<div id="flipbook">
+  <!-- Portada -->
+  <div class="page portada">
+    <h2>📖 Fenómenos Naturales - Ciencia Divertida</h2>
+    <p>Autor: Quasar</p>
+    <p>Haz clic en la esquina o usa los botones...</p>
+  </div>
+
+  <!-- Índice interactivo -->
+  <div class="page indice">
+    <h2>Índice</h2>
+    <ul>
+      <li><a href="#" onclick="$('#flipbook').turn('page',3)">La Gravedad</a></li>
+      <li><a href="#" onclick="$('#flipbook').turn('page',4)">El Arcoíris</a></li>
+    </ul>
+  </div>
+
+  <!-- Páginas del PDF convertidas en imágenes -->
+  <div class="page"><img src="paginas/gravedad.png" alt="La Gravedad"></div>
+  <div class="page"><img src="paginas/arcoiris.png" alt="El Arcoíris"></div>
+
+  <!-- Contraportada -->
+  <div class="page contraportada">
+    <h2>Fin del Libro 🌈</h2>
+    <p>Gracias por leer.</p>
+  </div>
+</div>
+
+<!-- Botones de navegación -->
+<div class="nav-buttons">
+  <button onclick="$('#flipbook').turn('page',1)">🏠 Inicio</button>
+  <button onclick="$('#flipbook').turn('previous')">⬅️ Anterior</button>
+  <button onclick="$('#flipbook').turn('next')">Siguiente ➡️</button>
+</div>
+
+<!-- Librerías -->
+<script src="js/jquery-4.0.0.min.js"></script>
+<script src="js/turn.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#flipbook").turn({
+      width: $("#flipbook").width(),
+      height: $("#flipbook").height(),
+      autoCenter: true,
+      gradients: true,
+      acceleration: true
+    });
+  });
+</script>
+
+</body>
+</html>
